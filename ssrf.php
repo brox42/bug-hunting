@@ -1,1 +1,3 @@
-<?php header(“location: http://127.0.0.1"); ?>
+<?php
+header('Location: http://127.0.0.1:8080/server-status');
+?>
