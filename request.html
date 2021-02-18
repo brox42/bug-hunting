@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Display ID</title>
+  <style>
+    body {
+      background-color: #FFCC00;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 140px;
+      font-size: 60px;
+      margin: -15px;
+    }
+
+    p {
+      font-family: sans-serif;
+      color: #907400;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id=ipText></h1>
+  <p>( This is your id )</p>
+  <script>
+    fetch("https://www.omio.com/booking-api/v2/booking-transactions?cacheBuster=1613561915393")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (myJson) {
+        document.querySelector("#ipText").innerHTML = myJson.ip;
+      })
+      .catch(function (error) {
+        console.log("Error: " + error);
+      });
+  </script>
+</body>
+
+</html>
